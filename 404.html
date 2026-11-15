@@ -1,76 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unevn Studios — Maintenance</title>
-    <meta name="description" content="Unevn Studios is currently under maintenance." />
-    <style>
-      :root {
-        --bg: #ffffff;
-        --text: #000000;
-        --muted: #d9d9d9;
-        --border: rgba(255,255,255,0.18);
-      }
-      * { box-sizing: border-box; }
-      html, body {
-        margin: 0;
-        min-height: 100%;
-        background: var(--bg);
-        color: var(--text);
-        font-family: Inter, "Segoe UI", sans-serif;
-      }
-      body {
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #000;
-      }
-      main {
-        width: min(760px, calc(100vw - 32px));
-        border: 1px solid var(--border);
-        padding: clamp(24px, 5vw, 56px);
-        text-align: center;
-      }
-      .eyebrow {
-        display: inline-block;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        font-size: 12px;
-        color: var(--muted);
-        margin-bottom: 18px;
-      }
-      h1 {
-        margin: 0 0 16px;
-        font-size: clamp(2.2rem, 7vw, 4.4rem);
-        line-height: 1;
-        letter-spacing: -0.06em;
-      }
-      p {
-        margin: 0 auto;
-        max-width: 600px;
-        color: var(--muted);
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        line-height: 1.7;
-      }
-      .btn {
-        display: inline-block;
-        margin-top: 28px;
-        padding: 12px 18px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 600;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="eyebrow">Maintenance</div>
-      <h1>Under maintenance</h1>
-      <p>This site is currently being updated. Please check back soon.</p>
-      <a class="btn" href="/">Refresh</a>
-    </main>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | UnevnStudios</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--logo:url(data:image/png;base64,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)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fff;color:#0a0a0a;font-family:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;text-align:center;padding:24px}
+main{animation:in .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(20px)}}
+.lg{display:inline-block;width:56px;aspect-ratio:160/143;background:#0a0a0a;-webkit-mask:var(--logo) center/contain no-repeat;mask:var(--logo) center/contain no-repeat}
+h1{font-size:clamp(6rem,24vw,13rem);line-height:.9;letter-spacing:-.06em;margin:24px 0 10px}
+p{font-size:1.2rem;color:#6b6b6b;margin:0 0 32px}
+p em{font-family:'Instrument Serif',Georgia,serif;color:#0a0a0a}
+a{display:inline-block;background:#0a0a0a;color:#fff;text-decoration:none;font-weight:500;padding:14px 28px;border-radius:99px;transition:transform .3s}
+a:hover{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){main{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <span class="lg"></span>
+  <h1>404</h1>
+  <p>This page doesn&rsquo;t exist, or it <em>moved.</em></p>
+  <a href="/">Back to home</a>
+</main>
+</body>
 </html>
