@@ -160,7 +160,6 @@ footer{padding:90px 0 0;overflow:hidden}
 </head>
 <body>
 <div class="ld"><span class="lg"></span></div>
-<div class="pv"><div class="pi"></div></div>
 <header><div class="wrap">
   <a class="brand" href="#top"><span class="lg"></span>UnevnStudios</a>
   <nav class="menu"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
@@ -174,7 +173,7 @@ footer{padding:90px 0 0;overflow:hidden}
     <h1><span class="l" style="--i:0"><span style="--i:0">Small business.</span></span><span class="l"><span style="--i:1"><em>Premium</em> website.</span></span></h1>
     <p class="lead fi" style="--d:2s">We design and build polished, fast websites for small businesses that deserve to look as good as the big players.</p>
     <div class="cta fi" style="--d:2.15s"><a class="pill mag" href="#contact">Get a quote</a><a class="ghost" href="#work">See our work →</a></div>
-    <div class="facts fi" style="--d:2.3s"><div><b><span data-n="100" data-p="$" data-s="+">$100+</span></b><span>CAD starting price</span></div><div><b><span data-n="100" data-s="%">100%</span></b><span>custom designed</span></div><div><b>Mobile</b><span>first, always</span></div></div>
+    <div class="facts fi" style="--d:2.3s"><div><b><span data-n="250" data-p="$" data-s="+">$250+</span></b><span>CAD starting price</span></div><div><b><span data-n="100" data-s="%">100%</span></b><span>custom designed</span></div><div><b>Mobile</b><span>first, always</span></div></div>
   </div>
   <div class="bw fi" style="--d:1.8s" data-bw>
     <div class="browser"><div class="top"><i></i><i></i><i></i><u>yourbusiness.ca</u></div>
@@ -224,10 +223,10 @@ footer{padding:90px 0 0;overflow:hidden}
     <div class="opts rv"><div class="ind"></div>
       <button class="po" data-i="0">Starter<small>one page</small></button>
       <button class="po on" data-i="1">Business<small>up to 5 pages</small></button>
-      <button class="po" data-i="2">Premium<small>the full build</small></button>
+      <button class="po" data-i="2">Signature<small>the full build</small></button>
       <p class="note">Need something different? Message us for a custom quote.</p>
     </div>
-    <div class="det rv" style="--d:.15s"><div class="tx"><div class="amt"><span id="pn">250</span><small>CAD</small></div><p id="pd"></p></div><p class="inc tx" id="pl"></p></div>
+    <div class="det rv" style="--d:.15s"><div class="tx"><div class="amt"><span id="pn">500</span><small>CAD</small></div><p id="pd"></p></div><p class="inc tx" id="pl"></p><a class="pill mag" id="pbtn" href="#contact" style="align-self:flex-start;margin-top:24px">Get started →</a></div>
   </div>
 </div></section>
 
@@ -276,9 +275,6 @@ addEventListener('scroll',function(){var y=scrollY;hd.classList.toggle('hide',y>
 $$('.mag').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+(e.clientX-r.left-r.width/2)*.3+'px,'+(e.clientY-r.top-r.height/2)*.4+'px)'});b.addEventListener('mouseleave',function(){b.style.transform=''})});
 function tilt(t,k){t.addEventListener('mousemove',function(e){var r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.transform='perspective(900px) rotateY('+x*k+'deg) rotateX('+-y*k+'deg)'});t.addEventListener('mouseleave',function(){t.style.transform=''})}
 $$('[data-tilt]').forEach(function(t){tilt(t,10)});tilt($('[data-bw]'),14);
-/* work preview */
-var pv=$('.pv'),pi=$('.pi');
-$$('.list a').forEach(function(a){a.addEventListener('mouseenter',function(){pi.textContent=a.dataset.t;pv.classList.add('on')});a.addEventListener('mouseleave',function(){pv.classList.remove('on')});a.addEventListener('mousemove',function(e){pv.style.transform='translate('+(e.clientX+28)+'px,'+(e.clientY-80)+'px) rotate(-5deg)'})});
 /* faq */
 $$('.q button').forEach(function(b){b.addEventListener('click',function(){var q=b.parentNode,o=q.classList.contains('open');$$('.q').forEach(function(x){x.classList.remove('open')});if(!o)q.classList.add('open')})});
 /* nav highlight */
@@ -286,9 +282,11 @@ var ls=$$('.menu a');
 var so=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)ls.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+x.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
 ['work','services','process','pricing','faq'].forEach(function(id){so.observe(document.getElementById(id))});
 /* pricing */
-var P=[{p:100,d:'A clean one-page site to get your business online fast.',l:'One page, mobile friendly, contact form.'},{p:250,d:'A custom-designed site with the pages most businesses need.',l:'Up to 5 pages, custom design, basic SEO, one round of revisions.'},{p:500,d:'The full build: a complete site or online store, with extra polish.',l:'Full site or store, animations, priority support, unlimited revisions.'}];
-var po=$$('.po'),ind=$('.ind'),pn=$('#pn'),shown=250,tx=$$('.tx');
-function pick(i){po.forEach(function(b,j){b.classList.toggle('on',i===j)});ind.style.transform='translateY('+i*100+'%)';$('#pd').textContent=P[i].d;$('#pl').textContent=P[i].l;
+/* paste Stripe or PayPal payment links here, in order: Starter, Business, Signature */
+var LINKS=['','',''];
+var P=[{p:250,d:'A clean one-page site to get your business online fast.',l:'One page, mobile friendly, contact form.'},{p:500,d:'A custom-designed site with the pages most businesses need.',l:'Up to 5 pages, custom design, basic SEO, one round of revisions.'},{p:1000,d:'The full build: a complete site or online store, with extra polish.',l:'Full site or store, animations, priority support, unlimited revisions.'}];
+var po=$$('.po'),ind=$('.ind'),pn=$('#pn'),shown=500,tx=$$('.tx');
+function pick(i){po.forEach(function(b,j){b.classList.toggle('on',i===j)});ind.style.transform='translateY('+i*100+'%)';$('#pd').textContent=P[i].d;$('#pl').textContent=P[i].l;var bt=$('#pbtn');bt.href=LINKS[i]||'#contact';bt.target=LINKS[i]?'_blank':'';
 tx.forEach(function(t){t.classList.remove('sw');void t.offsetWidth;t.classList.add('sw')});
 var a=shown,b=P[i].p,t0;(function f(t){t0=t0||t;var k=Math.min(1,(t-t0)/600);shown=Math.round(a+(b-a)*(1-Math.pow(1-k,3)));pn.textContent=shown;if(k<1)requestAnimationFrame(f)})(performance.now())}
 po.forEach(function(b,i){b.addEventListener('click',function(){pick(i)})});pick(1);tx.forEach(function(t){t.classList.remove('sw')});
